@@ -160,6 +160,7 @@ border-bottom: 2px solid white;
 left: 50%;
 top: 95%;
 transform: rotate(45deg) translate(-50%, -50%);
+cursor: pointer;
 }
 
 
