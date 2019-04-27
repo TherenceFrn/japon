@@ -51,15 +51,32 @@
             <h2>Derniers Articles</h2>
           </div>
           <div class="block-articles-home">
+
+
+          <?php
+
+          $requete = $connection->query("SELECT * FROM articles ORDER BY id DESC");
+
+          $requeteresultat = $requete -> fetchAll();
+
+          foreach ($requeteresultat as $key) {
+          	?>
+            <a href="article.php?id=<?php echo $key -> id;?>">
             <div class="article-home">
                 <div class="inner">
-                  <p class="home-article-title">Les Temples</p>
-                  <p class="home-article-subtitle">Jour #15 : Les Temples</p>
+                  <p class="home-article-title"><?php echo $key -> titre; ?></p>
+                  <p class="home-article-subtitle">Jour #<?php echo $key -> jour; ?> : <?php echo $key -> titre; ?></p>
                 </div>
               <div class="block-degrade-article-home">
-                <img src="images/header/header-image.jpg" alt="">
+                <img src="<?php echo $key -> image; ?>" alt="">
               </div>
             </div>
+            </a>
+
+            <?php
+            }
+          ?>
+
             <div class="article-home">
                 <div class="inner">
                   <p class="home-article-title">Les Temples</p>

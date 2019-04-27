@@ -52,13 +52,13 @@
 
           <?php
 
-          $requete = $connexion->query("SELECT * FROM articles ORDER BY id DESC");
+          $requete = $connection->query("SELECT * FROM articles ORDER BY id DESC");
 
           $requeteresultat = $requete -> fetchAll();
 
           foreach ($requeteresultat as $key) {
           	?>
-
+            
             <div class="div-articles">
               <div class="articles-image">
                 <img class="" src="<?php echo $key -> image; ?>" alt="" />
