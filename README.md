@@ -14,6 +14,6 @@ If you want to help me in the development of this website, or just report a bug,
 ## Links
 
 ##### [My Twitter](https://twitter.com/therenceferron)  
-##### [My other account](https://twitter.com/littletherence) ( where I shitpost )
+##### [My other Twitter account](https://twitter.com/littletherence) ( where I shitpost )
 ##### My mail : therence.ferron@gmail.com
 ##### [Website](https://celbilix.alwaysdata.net)
