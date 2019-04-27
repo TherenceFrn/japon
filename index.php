@@ -16,6 +16,7 @@
     $adresseURL = 'index';
 
     include 'header.php';
+    include 'connection.php';
 
     ?>
 
