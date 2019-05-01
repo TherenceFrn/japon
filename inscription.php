@@ -14,22 +14,24 @@
   <?php
 
   // permet de savoir sur quel page on est
-  $adresseURL = 'index';
+  $adresseURL = 'inscription';
 
   include 'header.php';
   include 'connection.php';
 
   if(isset($_POST['validInscription'])){
 
+    $pseudo = htmlspecialchars($_POST['pseudo']);
+    $nom = htmlspecialchars($_POST['nom']);
+    $prenom = htmlspecialchars($_POST['prenom']);
+    $email = htmlspecialchars($_POST['email']);
+    $email2 = htmlspecialchars($_POST['email2']);
+    $password = sha1($_POST['password']);
+    $password2 = sha1($_POST['password2']);
+
     if(!empty($_POST['nom']) AND !empty($_POST['prenom']) AND !empty($_POST['pseudo']) AND !empty($_POST['email']) AND !empty($_POST['email2']) AND !empty($_POST['password']) AND !empty($_POST['password2'])){
 
-        $pseudo = htmlspecialchars($_POST['pseudo']);
-        $nom = htmlspecialchars($_POST['nom']);
-        $prenom = htmlspecialchars($_POST['prenom']);
-        $email = htmlspecialchars($_POST['email']);
-        $email2 = htmlspecialchars($_POST['email2']);
-        $password = sha1($_POST['password']);
-        $password2 = sha1($_POST['password2']);
+
 
         $pseudo_l = strlen($pseudo);
         $nom_l = strlen($nom);
@@ -39,6 +41,50 @@
 
         if($pseudo_l <= 255 AND $nom_l <= 255 AND $prenom_l <= 255 AND $email_l <= 255 AND $email2_l <= 255){
 
+
+          if ($email == $email2) {
+
+            if(filter_var($email,FILTER_VALIDATE_EMAIL)){
+
+            $reqmail = $connection->prepare('SELECT * FROM membres WHERE mail=?');
+            $reqmail->execute(array($email));
+            $mailexist = $reqmail->rowCount();
+
+                  if($mailexist == 0){
+
+
+
+                              if ($password == $password2) {
+
+                                            $requeteMembres = $connection->prepare('INSERT INTO membres(pseudo, mail, nom, prenom, motdepasse) VALUES(?,?,?,?,?)');
+                                            $requeteMembres->execute(array(
+                                              $pseudo,
+                                              $email,
+                                              $nom,
+                                              $prenom,
+                                              $password
+                                            ));
+
+                                      }else{
+
+                                        $e = 'Les mots de passes ne correspondent pas';
+                                      }
+
+                          }else{
+
+                            $e = 'Un compte existe déjà avec cette adersse mail';
+                          }
+
+                    }else{
+
+                      $e = 'Votre adresse mail n\'est pas valide';
+
+                      }
+
+                  }else{
+
+                    $e = 'Les adresses email ne correspondent pas';
+                  }
 
         }else{
 
@@ -63,29 +109,29 @@
         <form class="" action="" method="post">
 
           <div class="input-group mb-3">
-            <input name="nom" type="text" class="form-control" placeholder="Nom">
+            <input name="nom" type="text" class="form-control" placeholder="Nom" value="<?php if(isset($nom)){ echo $nom;} ?>">
           </div>
 
           <div class="input-group mb-3">
-            <input name="prenom" type="text" class="form-control" placeholder="Prenom">
+            <input name="prenom" type="text" class="form-control" placeholder="Prenom" value="<?php if(isset($prenom)){ echo $prenom;} ?>">
           </div>
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text">@</span>
             </div>
-            <input name="pseudo" type="text" class="form-control" placeholder="Pseudo">
+            <input name="pseudo" type="text" class="form-control" placeholder="Pseudo" value="<?php if(isset($pseudo)){ echo $pseudo;} ?>">
           </div>
 
           <div class="input-group mb-3">
-            <input name="email" type="email" class="form-control" placeholder="E-Mail">
+            <input name="email" type="email" class="form-control" placeholder="E-Mail" value="<?php if(isset($email)){ echo $email;} ?>">
           </div>
 
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text">Confirmez votre e-mail</span>
             </div>
-            <input name="email2" type="email" class="form-control" placeholder="E-Mail">
+            <input name="email2" type="email" class="form-control" placeholder="E-Mail"  value="<?php if(isset($email2)){ echo $email2;} ?>">
           </div>
 
 
@@ -104,6 +150,14 @@
           <button type="submit" name="validInscription" class="btn btn-primary float-right">S'inscrire</button>
 
         </form>
+
+        <hr>
+        <h3>Vous avez déjà un compte ?</h3>
+          <a href="connexion.php">
+            <button type="" name="" class="btn btn-primary float-right">
+            Se connecter
+            </button>
+          </a>
       </div>
 
     </section>

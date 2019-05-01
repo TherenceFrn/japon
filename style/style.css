@@ -12,9 +12,10 @@ text-decoration: none;
 color: inherit;
 }
 
-a:visited, a:hover{
+a:visited, a:hover, a:active, a:focus{
 text-decoration: none;
 color: inherit;
+border: none;
 }
 
 img{
@@ -60,9 +61,12 @@ font-family: 'GidoleRegular';
 
 p{
 font-family: 'GidoleRegular';
-color: white;
+/* color: white; */
 }
 
+.container p{
+color: inherit;
+}
 
 /* HEADER */
 
