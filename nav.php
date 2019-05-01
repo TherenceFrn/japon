@@ -16,7 +16,7 @@
         </ul>
       </div>
       <div class="block-connexion-nav">
-        <a href="connexion.php"><i class="fas fa-user"></i></a>
+        <a href=" <?php if(isset($_SESSION['id'])){ echo 'profil.php?id='.$_SESSION['id'];}else{ echo 'connexion.php';} ?> "><i class="fas fa-user"></i></a>
       </div>
     </div>
   </div>

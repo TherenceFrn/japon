@@ -44,12 +44,19 @@
 
           if($_POST['newmail'] == $_POST['newmail2']){
 
-            $newmail = htmlspecialchars($_POST['newmail']);
-            $updatemail = $connection->prepare('UPDATE membres SET mail=? WHERE id=?');
-            $updatemail->execute(array(
-                                          $newmail,
-                                          $_SESSION['id']
-            ));
+            $reqmail = $connection->prepare('SELECT * FROM membres WHERE mail=?');
+            $reqmail->execute(array($_POST['newmail']));
+            $mailexist = $reqmail->rowCount();
+
+              if($mailexist == 0 ){
+
+                  $newmail = htmlspecialchars($_POST['newmail']);
+                  $updatemail = $connection->prepare('UPDATE membres SET mail=? WHERE id=?');
+                  $updatemail->execute(array(
+                                                $newmail,
+                                                $_SESSION['id']
+                  ));
+              }
           }
 
         }
@@ -71,7 +78,7 @@
                                         $_SESSION['id']
           ));
         }
-        if(isset($_POST['newpassword']) AND !empty($_POST['newpassword']) AND $_POST['newpassword'] != $_SESSION['password']){
+        if(isset($_POST['newpassword']) AND !empty($_POST['newpassword']) AND isset($_POST['newpassword2']) AND !empty($_POST['newpassword2'])){
 
           if($_POST['newpassword'] == $_POST['newpassword2']){
 

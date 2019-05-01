@@ -204,6 +204,7 @@ font-size: 20px;
 
 
 .block-content-body .section-discover .div-discover .block-discover-content h3:hover::before{
+transition: 0.3 ease;
 content :'»';
 }
 
