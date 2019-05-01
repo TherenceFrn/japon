@@ -359,6 +359,13 @@ top: 0;
 z-index: 0;
 }
 
+/* INSCRIPTION */
+
+.block-content-body .section-inscription{
+margin: 0 100px;
+padding: 100px 0;
+}
+
 
 /* FOOTER */
 
