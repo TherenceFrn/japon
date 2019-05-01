@@ -76,16 +76,6 @@
             <?php
             }
           ?>
-
-            <div class="article-home">
-                <div class="inner">
-                  <p class="home-article-title">Les Temples</p>
-                  <p class="home-article-subtitle">Jour #15 : Les Temples</p>
-                </div>
-              <div class="block-degrade-article-home">
-                <img src="images/header/header-image.jpg" alt="">
-              </div>
-            </div>
             <div class="article-home">
                 <div class="inner">
                   <p class="home-article-title">Les Temples</p>

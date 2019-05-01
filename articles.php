@@ -24,7 +24,6 @@
         <main class="block-content-body">
         <section class="section-1 section-articles">
 
-
           <!-- <div class="div-articles">
             <div class="articles-image">
               <img class="" src="images/header/header-image.jpg" alt="" />
@@ -58,7 +57,7 @@
 
           foreach ($requeteresultat as $key) {
           	?>
-            
+
             <div class="div-articles">
               <div class="articles-image">
                 <img class="" src="<?php echo $key -> image; ?>" alt="" />

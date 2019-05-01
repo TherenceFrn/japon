@@ -16,7 +16,7 @@
         </ul>
       </div>
       <div class="block-connexion-nav">
-        <i class="fas fa-user"></i>
+        <a href="connexion.php"><i class="fas fa-user"></i></a>
       </div>
     </div>
   </div>
