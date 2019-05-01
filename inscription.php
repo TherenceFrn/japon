@@ -19,6 +19,12 @@
   include 'header.php';
   include 'connection.php';
 
+
+  if(isset($_SESSION['id'])){
+
+    header('Location: profil.php?id='.$_SESSION['id']);
+  }
+
   if(isset($_POST['validInscription'])){
 
     $pseudo = htmlspecialchars($_POST['pseudo']);

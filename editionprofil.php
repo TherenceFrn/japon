@@ -198,9 +198,10 @@
               <input name="newpassword2" type="password" class="form-control" placeholder="Confirmation du nouveau mot de passe">
             </div>
 
-            <div class="input-group">
+
+            <div class="input-group" style="align-items: end !important;">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                <span class="input-group-text" id="inputGroupFileAddon01"><img src="images/avatar/<?php echo $userinfo-> avatar; ?>" class="rounded img-thumbnail" alt="avatar" width="200px" height="200px"></span>
               </div>
               <div class="custom-file">
                 <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="avatar">

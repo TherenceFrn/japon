@@ -19,6 +19,12 @@
   include 'header.php';
   include 'connection.php';
 
+
+  if(isset($_SESSION['id'])){
+
+    header('Location: profil.php?id='.$_SESSION['id']);
+  }
+
   if(isset($_POST['validConnexion'])){
 
     $emailCo = htmlspecialchars($_POST['emailCo']);
@@ -33,8 +39,13 @@
 
             if($userRowCount == 1){
 
-              $userinfo = $requser->fetch();
+              if(isset($_POST['stayLogged'])){
+                  setcookie('mail', $emailCo, time()+365*24*3600,null,null,false,true);
+                  setcookie('password', $passwordCo, time()+365*24*3600,null,null,false,true);
 
+              }
+
+              $userinfo = $requser->fetch();
               $_SESSION['id'] = $userinfo-> id;
               $_SESSION['nom'] = $userinfo-> nom;
               $_SESSION['prenom'] = $userinfo-> prenom;
@@ -82,6 +93,10 @@
               <input name="passwordCo" type="password" class="form-control" placeholder="Mot de passe">
             </div>
 
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" name="stayLogged" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1" style="color: white;">Rester connecté ?</label>
+            </div>
           <button type="submit" name="validConnexion" class="btn btn-primary float-right">Se connecter</button>
 
         </form>
