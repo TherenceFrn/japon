@@ -83,7 +83,7 @@ color: white;
 padding: 1% 8%;
 display: flex;
 justify-content: space-between;
-align-items: center;
+/* align-items: center; */
 }
 
 .block-nav .block-nav-menu .block-nav-ul{
@@ -224,6 +224,10 @@ font-size: 25px;
 margin: 50px 12%;
 display: flex;
 justify-content: space-between;
+}
+
+.block-content-body .section-home-articles .block-articles-home p{
+color: white;
 }
 
 .block-content-body .section-home-articles .block-articles-home .article-home{

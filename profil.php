@@ -45,13 +45,13 @@
             <h4 class="card-title"><h5>Nom Prenom : </h5><?php echo $userinfo-> nom.' '; echo $userinfo-> prenom;?></h4>
             <p class="card-text"><h5>Pseudo : </h5><?php echo $userinfo-> pseudo;?></p>
             <p class="card-text"><h5>e-Mail : </h5><?php echo $userinfo-> mail;?></p>
-            <p class="card-text"><h5>Numéro d'utilisateur : </h5><?php echo $userinfo-> id;?></p>
+            <p class="card-text"><h5>Numéro d'utilisateur : <a href="profil.php?id=<?php echo $userinfo-> id;?>"></h5>#<?php echo $userinfo-> id;?></p></a>
 
             <?php if(isset($_SESSION['id']) AND $userinfo-> id == $_SESSION['id']){
                 ?>
-                <button type="button" class="btn btn-primary">Editer mon profil</button>
-                <button type="button" class="btn btn-success">Créer un article</button>
-                <a href="deconnexion"><button type="button" class="btn btn-danger float-right">Se déconnecter</button></a>
+                <a href="editionprofil.php"><button type="button" class="btn btn-primary">Editer mon profil</button></a>
+                <a href="#"><button type="button" class="btn btn-success">Créer un article</button></a>
+                <a href="deconnexion.php"><button type="button" class="btn btn-danger float-right">Se déconnecter</button></a>
                 <?php
                 } ?>
 
