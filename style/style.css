@@ -12,7 +12,7 @@ text-decoration: none;
 color: inherit;
 }
 
-a:visited{
+a:visited, a:hover{
 text-decoration: none;
 color: inherit;
 }
