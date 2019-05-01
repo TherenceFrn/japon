@@ -56,13 +56,16 @@
 
                               if ($password == $password2) {
 
-                                            $requeteMembres = $connection->prepare('INSERT INTO membres(pseudo, mail, nom, prenom, motdepasse) VALUES(?,?,?,?,?)');
+                                            $avatar = 'avatar.gif';
+
+                                            $requeteMembres = $connection->prepare('INSERT INTO membres(pseudo, mail, nom, prenom, motdepasse, avatar) VALUES(?,?,?,?,?,?)');
                                             $requeteMembres->execute(array(
                                               $pseudo,
                                               $email,
                                               $nom,
                                               $prenom,
-                                              $password
+                                              $password,
+                                              $avatar
                                             ));
 
                                       }else{

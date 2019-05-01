@@ -95,6 +95,44 @@
           }
 
         }
+
+        if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])){
+
+          $tailleMax = 2097152;
+          $extensionValides = array('jpg','png','jpeg','gif');
+
+            if($_FILES['avatar']['size'] <= $tailleMax){
+
+                $extentionUpload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));
+
+                  if(in_array($extentionUpload, $extensionValides)){
+
+                      $chemin = 'images/avatar/'.$_SESSION['id'].'.'.$extentionUpload;
+                      $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'],$chemin);
+                      if($resultat){
+
+                          $requeteAvatar= $connection->prepare('UPDATE membres SET avatar=:avatar WHERE id=:id');
+                          $requeteAvatar->execute(array(
+                          'avatar' => $_SESSION['id'].'.'.$extentionUpload,
+                          'id' => $_SESSION['id']
+                          ));
+
+                      }else{
+
+                        $e = 'Erreur importation fichier';
+                      }
+
+                  }else{
+
+                    $e = 'Format non pris en compte ( jpeg, jpg, png ou gif seulement)';
+                  }
+
+            }else{
+
+              $e = 'Fichiers trop volumineux ( 2 Mo max )';
+            }
+        }
+
           header('Location: profil.php?id='.$_SESSION['id']);
     }
 
@@ -115,7 +153,7 @@
           <strong>Attention !</strong> si vous ne souhaitez pas modifier un champ ne changez pas sa valeur
         </div>
         <h2>Profil</h2>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
 
             <div class="input-group mb-3">
               <div class="input-group-prepend">
@@ -160,6 +198,15 @@
               <input name="newpassword2" type="password" class="form-control" placeholder="Confirmation du nouveau mot de passe">
             </div>
 
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+              </div>
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="avatar">
+                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+              </div>
+            </div>
 
           <button type="submit" name="validUpdate" class="btn btn-primary float-right">Enregistrer mes informations</button>
 

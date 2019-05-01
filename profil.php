@@ -42,6 +42,9 @@
         <h3><?php echo $userinfo-> nom.' '; echo $userinfo-> prenom;?></h3>
         <div class="card">
           <div class="card-body">
+
+
+            <img src="images/avatar/<?php echo $userinfo-> avatar; ?>" class="rounded float-right img-thumbnail" alt="avatar" width="200px" height="200px">
             <h4 class="card-title"><h5>Nom Prenom : </h5><?php echo $userinfo-> nom.' '; echo $userinfo-> prenom;?></h4>
             <p class="card-text"><h5>Pseudo : </h5><?php echo $userinfo-> pseudo;?></p>
             <p class="card-text"><h5>e-Mail : </h5><?php echo $userinfo-> mail;?></p>
