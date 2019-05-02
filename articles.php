@@ -60,7 +60,9 @@
 
             <div class="div-articles">
               <div class="articles-image">
-                <img class="" src="<?php echo $key -> image; ?>" alt="" />
+                <a href="article.php?id=<?php echo $key -> id;?>">
+                  <img class="" src="<?php echo 'images/article/'.$key -> image; ?>" alt="" />
+                </a>
               </div>
               <div class="articles-content">
                 <h3><?php echo $key -> titre; ?></h3>

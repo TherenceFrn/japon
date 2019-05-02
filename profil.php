@@ -53,10 +53,10 @@
             <?php if(isset($_SESSION['id']) AND $userinfo-> id == $_SESSION['id']){
                 ?>
                 <a href="editionprofil.php"><button type="button" class="btn btn-primary">Editer mon profil</button></a>
-                <a href="#"><button type="button" class="btn btn-success">Créer un article</button></a>
+                <a href="listearticle.php"><button type="button" class="btn btn-success">Créer un article</button></a>
                 <a href="deconnexion.php"><button type="button" class="btn btn-danger float-right">Se déconnecter</button></a>
                 <?php
-                } ?>  
+                } ?>
           </div>
         </div>
         <div class="card">

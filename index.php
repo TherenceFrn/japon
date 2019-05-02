@@ -55,7 +55,7 @@
 
           <?php
 
-          $requete = $connection->query("SELECT * FROM articles ORDER BY id DESC");
+          $requete = $connection->query("SELECT * FROM articles ORDER BY id DESC LIMIT 4");
 
           $requeteresultat = $requete -> fetchAll();
 
@@ -68,7 +68,7 @@
                   <p class="home-article-subtitle">Jour #<?php echo $key -> jour; ?> : <?php echo $key -> titre; ?></p>
                 </div>
               <div class="block-degrade-article-home">
-                <img src="<?php echo $key -> image; ?>" alt="">
+                <img src="<?php echo 'images/article/'.$key -> image; ?>" alt="">
               </div>
             </div>
             </a>
@@ -76,7 +76,7 @@
             <?php
             }
           ?>
-            <div class="article-home">
+            <!-- <div class="article-home">
                 <div class="inner">
                   <p class="home-article-title">Les Temples</p>
                   <p class="home-article-subtitle">Jour #15 : Les Temples</p>
@@ -93,7 +93,7 @@
               <div class="block-degrade-article-home">
                 <img src="images/header/header-image.jpg" alt="">
               </div>
-            </div>
+            </div> -->
           </div>
         </section>
       </main>
