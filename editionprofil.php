@@ -208,7 +208,7 @@
                 <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
               </div>
             </div>
-
+          <br>
           <button type="submit" name="validUpdate" class="btn btn-primary float-right">Enregistrer mes informations</button>
 
         </form>

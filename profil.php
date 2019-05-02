@@ -56,9 +56,7 @@
                 <a href="#"><button type="button" class="btn btn-success">Créer un article</button></a>
                 <a href="deconnexion.php"><button type="button" class="btn btn-danger float-right">Se déconnecter</button></a>
                 <?php
-                } ?>
-
-
+                } ?>  
           </div>
         </div>
         <div class="card">
