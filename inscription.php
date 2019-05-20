@@ -15,7 +15,6 @@
 
   // permet de savoir sur quel page on est
   $adresseURL = 'inscription';
-
   include 'header.php';
   include 'connection.php';
 
