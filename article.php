@@ -13,7 +13,7 @@
     <?php
 
     // permet de savoir sur quel page on est
-    $adresseURL = 'articles';
+    $adresseURL = 'article';
 
     include 'header.php';
     include 'connection.php';
@@ -22,32 +22,7 @@
 
       <!-- main -->
         <main class="block-content-body">
-        <section class="section-1 section-articles">
-
-          <!-- <div class="div-articles">
-            <div class="articles-image">
-              <img class="" src="images/header/header-image.jpg" alt="" />
-            </div>
-            <div class="articles-content">
-              <h3>Les Temples</h3>
-              <div class="articles-infos">
-                <i class="far fa-calendar-alt"></i>
-                <p>2019-02-05</p>
-                <i class="fas fa-user-alt"></i>
-                <p>Thérence</p>
-                <i class="far fa-comment"></i>
-                <p>7 Commentaires</p>
-                <i class="fas fa-tasks"></i>
-                <p>Jour 11</p>
-              </div>
-              <div class="articles-resume">
-                Début de l'article, eh oui il est fort intéressant de pouvoir lire le début de chaque article, car cela permet à l'utilisateur de savoir ce qu'il va pouvoir y découvrir
-              </div>
-            </div>
-            <div class="articles-lire-plus">
-              Lire l'article
-            </div>
-          </div> -->
+        <section class="section-1 section-article">
 
           <?php
 
