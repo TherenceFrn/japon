@@ -26,9 +26,11 @@
 
           <?php
 
-          $requete = $connection->query("SELECT * FROM articles ORDER BY id DESC");
+          $requete = $connection->query("SELECT * FROM articles WHERE id=     ?");
 
-          $requeteresultat = $requete -> fetchAll();
+          $requeteR = $requete->execute(array($_POST['id']));
+
+          $requeteresultat = $requeteR -> fetchAll();
 
           foreach ($requeteresultat as $key) {
           	?>
