@@ -26,7 +26,7 @@
 
           <?php
 
-          $requete = $connection->query("SELECT * FROM articles WHERE id=     ?");
+          $requete = $connection->query("SELECT * FROM articles WHERE id=?");
 
           $requeteR = $requete->execute(array($_POST['id']));
 
