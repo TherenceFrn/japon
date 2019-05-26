@@ -17,12 +17,26 @@
 
     if(isset($_POST['validArticle']) AND isset($_SESSION['id'])){
 
-      $nom = htmlspecialchars($_POST['nom']);
+      $titre= htmlspecialchars($_POST['nom']);
       $jour = intval($_POST['jour']);
       $resume = htmlspecialchars($_POST['resume']);
       $contenu = htmlspecialchars($_POST['contenu']);
 
-      if(!empty($_POST['nom']) AND !empty($_POST['jour']) AND !empty($_POST['resume']) AND !empty($_POST['contenu'])){}
+      if(!empty($_POST['nom']) AND !empty($_POST['jour']) AND !empty($_POST['resume']) AND !empty($_POST['contenu'])){
+
+
+        $titre_l = strlen($titre);
+
+        if($titre_l <= 255){
+
+        //$requeteMembres = $connection->prepare('INSERT INTO articles(titre, datearticle, auteur, jour, avatar, contenu, extrait) VALUES(?,?,?,?,?,?)');
+        //$requeteMembres->execute(array(
+        
+        ));
+
+        }
+
+      }
 
     }
 

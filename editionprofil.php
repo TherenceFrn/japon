@@ -36,8 +36,8 @@
           $newpseudo = htmlspecialchars($_POST['newpseudo']);
           $updatepseudo = $connection->prepare('UPDATE membres SET pseudo=? WHERE id=?');
           $updatepseudo->execute(array(
-                                        $newpseudo,
-                                        $_SESSION['id']
+                      $newpseudo,
+                      $_SESSION['id']
           ));
         }
         if(isset($_POST['newmail']) AND !empty($_POST['newmail']) AND $_POST['newmail'] != $_SESSION['email']){
@@ -128,6 +128,8 @@
               $e = 'Fichiers trop volumineux ( 2 Mo max )';
             }
         }
+
+        header('Location: index.php');
 
     }
 

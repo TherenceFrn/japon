@@ -54,7 +54,7 @@
 
               <div class="article-image">
                 <a href="article.php?id=<?php echo $articleInfo -> id;?>">
-                  <img class="" src="<?php echo 'images/article/'.$articleInfo -> image; ?>" alt="" />
+                  <img class="" src="<?php echo 'images/article/'.$articleInfo -> avatar; ?>" alt="" />
                 </a>
               </div>
               

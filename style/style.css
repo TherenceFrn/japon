@@ -577,11 +577,6 @@ margin-right: 10px;
   border-radius: 4px;
 }
 
-
-
-
-
-
 .modale-image {
   width: 100vw;
   height: 100vh;
@@ -601,4 +596,19 @@ margin-right: 10px;
 
 .modale-image img {
   max-width: 100%;
+}
+
+
+/* listearticle.php */
+
+.section-liste-articles {
+
+ padding: 50px 0;
+}
+
+.section-liste-articles .container .container-liste-articles{
+
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }

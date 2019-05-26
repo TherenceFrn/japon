@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Japon</title>
-  <?php include 'head.php'; ?>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <?php include 'head.php'; ?>
   <?php
 
   include 'favicon.php';
@@ -30,13 +30,17 @@
 
   <!-- main -->
   <main class="block-content-body">
-    <section class="section-1 section-inscription">
+    <section class="section-1 section-liste-articles">
 
 
   <div class="container">
-    <h2>Liste des articles</h2>
-    <input class="form-control" id="myInput" type="text" placeholder="Trouver un article">
-    <br>
+    <div class="container-liste-articles">
+      <h2>Liste des articles</h2>
+      <a href="addarticle.php">  
+        <button class="btn btn-success">Créer un nouvel article</button>
+      </a>
+    </div>
+      <br>
     <table class="table table-bordered table-striped" style="background-color: white;">
       <thead>
         <tr>
@@ -72,18 +76,6 @@
       </tbody>
     </table>
   </div>
-
-          <script>
-          $(document).ready(function(){
-            $("#myInput").on("keyup", function() {
-              var value = $(this).val().toLowerCase();
-              $("#myTable tr").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-              });
-            });
-          });
-          </script>
-
     </section>
   </main>
 

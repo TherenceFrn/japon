@@ -64,7 +64,7 @@
                   <p class="home-article-subtitle">Jour #<?php echo $key -> jour; ?> : <?php echo $key -> titre; ?></p>
                 </div>
               <div class="block-degrade-article-home">
-                <img src="<?php echo 'images/article/'.$key -> image; ?>" alt="">
+                <img src="<?php echo 'images/article/'.$key -> avatar; ?>" alt="">
               </div>
             </div>
             </a>

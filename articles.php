@@ -57,7 +57,7 @@
             <div class="div-articles">
               <div class="articles-image">
                 <a href="article.php?id=<?php echo $key -> id;?>">
-                  <img class="" src="<?php echo 'images/article/'.$key -> image; ?>" alt="" />
+                  <img class="" src="<?php echo 'images/article/'.$key -> avatar; ?>" alt="" />
                 </a>
               </div>
               <div class="articles-content">
@@ -81,7 +81,7 @@
                   <p>Jour <?php echo $key -> jour; ?></p>
                 </div>
                 <div class="articles-resume">
-                  <?php echo $key -> resume; ?>
+                  <?php echo $key -> extrait; ?>
                 </div>
               </div>
               <a href="article.php?id=<?php echo $key -> id;?>">
