@@ -14,7 +14,7 @@
         <a href="#"><i class="fab fa-youtube"></i></a>
       </div>
       <div class="reso">
-        <a href="https://www.reddit.com/user/LittleTherence/m/japanmulti/"><i class="fab fa-reddit"></i></a>
+        <a href="https://www.reddit.com/user/ThatNameWithThatGuy/m/japanmulti/"><i class="fab fa-reddit"></i></a>
       </div>
     </div>
     <div class="footer-jf">
