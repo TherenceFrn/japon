@@ -85,22 +85,26 @@
 
         <?php
 
-         $requete = $connection->query("SELECT * FROM articles ORDER BY id DESC");
-         $requeteresultat = $requete -> fetchAll();
 
-         foreach ($requeteresultat as $key) { ?>
+        $prereq = "SELECT * FROM commentaires WHERE id_article='".$_GET['id']."' ORDER BY id DESC";
+        $requete = $connection -> query($prereq);
+        $requeteresultat = $requete -> fetchAll();
+
+
+        foreach ($requeteresultat as $key) { ?>
 
          <div class="commentaire-article">
            <div class="infos-commentaire">
-             <p class="auteur">Auteur</p>
-             <p class="date">date</p>
+             <p class="auteur"><?php echo $key->auteur;?></p>
+             <p class="date"><?php echo $key->datecom;?></p>
            </div>
            <div class="contenu-commentaire">
-
+          <?php echo $key->contenu;?>
            </div>
          </div>
           
-          <?php }
+          <?php 
+        }
 
         ?>
 
