@@ -65,13 +65,7 @@
           <td>#<?php echo $key -> id;?></td>
           <td><?php echo $key -> titre;?></td>
           <td><?php 
-          $prereqIm = $connection->prepare("SELECT * FROM membres WHERE id=?");
-          $prereqIm->execute(array($key -> id_auteur));
-          $infosim = $prereqIm->fetchAll();
-
-          foreach($infosim as $keyIm){
-            echo $keyIm->pseudo;
-          }?>
+          
                     </td>
           <td><?php echo $key -> datearticle;?></td>
           <td><a href="article.php?id=<?php echo $key -> id;?>"><button class="btn btn-primary">Voir</button></a></td>

@@ -29,19 +29,69 @@
 
         if($titre_l <= 255){
 
-	      $datearticle = date("Y-m-d H:i:s");
-          
-        $requeteArticle = $connection->prepare('INSERT INTO articles(titre, datearticle, id_auteur, jour, avatar, contenu, extrait) VALUES(?,?,?,?,?,?,?)');
-        $requeteArticle->execute(array(
-          $titre,
-          $datearticle,
-          $_SESSION['id'],
-          $jour,
-          '1.jpg',
-          $contenu,
-          $resume
-        ));
+            if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])){
 
+          $tailleMax = 2097152;
+          $extensionValides = array('jpg','png','jpeg','gif');
+
+            if($_FILES['avatar']['size'] <= $tailleMax){
+
+                $extentionUpload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));
+
+                  if(in_array($extentionUpload, $extensionValides)){
+
+                      $chemin = 'images/article/'.$_SESSION['id'].'.'.$extentionUpload;
+                      $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'],$chemin);
+                      if($resultat){
+
+                            $datearticle = date("Y-m-d H:i:s");
+                              
+                            $requeteArticle = $connection->prepare('INSERT INTO articles(titre, datearticle, id_auteur, jour, avatar, contenu, extrait) VALUES(?,?,?,?,?,?,?)');
+                            $requeteArticle->execute(array(
+                              $titre,
+                              $datearticle,
+                              $_SESSION['id'],
+                              $jour,
+                              '1.jpg',
+                              $contenu,
+                              $resume
+                            ));
+
+                            $prereqIm = $connection->prepare("SELECT * FROM articles ORDER BY id DESC LIMIT 1");
+                            $prereqIm->execute();
+                            $infosim = $prereqIm->fetchAll();
+
+                            foreach($infosim as $keyIm){
+                              $avatarLink = $keyIm->id.'.'.$extentionUpload;
+                              $idAvatar = $keyIm->id;
+
+                              $requeteAvatar= $connection->prepare('UPDATE articles SET avatar=:avatar WHERE id=:id');
+                              $requeteAvatar->execute(array(
+                              $avatarLink,
+                              'id' => $_SESSION['id'],
+                              'avatar' => $idAvatar
+                              ));
+
+                            }
+
+
+                      }else{
+
+                        $e = 'Erreur importation fichier';
+                      }
+
+                  }else{
+
+                    $e = 'Format non pris en compte ( jpeg, jpg, png ou gif seulement)';
+                  }
+
+            }else{
+
+              $e = 'Fichiers trop volumineux ( 2 Mo max )';
+            }
+        }
+
+	  
         }
 
       }
