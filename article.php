@@ -36,7 +36,6 @@
           $requete = $connection->prepare('SELECT * FROM articles WHERE id=?');
           $requete->execute(array($getid));
           $articleInfo = $requete->fetch();
-
         
           	?>
 
