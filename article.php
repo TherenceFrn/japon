@@ -130,7 +130,7 @@
 
          <div class="commentaire-article">
            <div class="imagePDP">
-             <img src="images/article/<?php 
+             <img src="images/avatar/<?php 
              
              $prereqIm = $connection->prepare("SELECT * FROM membres WHERE id=?");
              $prereqIm->execute(array($key->id_auteur));

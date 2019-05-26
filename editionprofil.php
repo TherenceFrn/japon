@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Japon</title>
-  <?php include 'head.php'; ?>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <?php include 'head.php'; ?>
   <?php
 
   include 'favicon.php';
@@ -129,13 +129,15 @@
             }
         }
 
-          header('Location: profil.php?id='.$_SESSION['id']);
     }
+
 
   }else{
 
     header('Location: connexion.php');
   }
+
+  
   ?>
 
   <!-- main -->
@@ -153,35 +155,35 @@
 
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text"><?php echo $userinfo-> pseudo; ?></span>
+                <span class="input-group-text">Pseudo :</span>
               </div>
               <input name="newpseudo" type="text" class="form-control" placeholder="Nouveau pseudo" value="<?php echo $userinfo-> pseudo; ?>">
             </div>
 
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text"><?php echo $userinfo-> nom; ?></span>
+                <span class="input-group-text">Nom :</span>
               </div>
               <input name="newnom" type="text" class="form-control" placeholder="Nouveau nom" value="<?php echo $userinfo-> nom; ?>">
             </div>
 
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text"><?php echo $userinfo-> prenom; ?></span>
+                <span class="input-group-text">Prenom :</span>
               </div>
               <input name="newprenom" type="text" class="form-control" placeholder="Nouveau prénom" value="<?php echo $userinfo-> prenom; ?>">
             </div>
 
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text"><?php echo $userinfo-> mail; ?></span>
+                <span class="input-group-text">e-Mail : </span>
               </div>
               <input name="newmail" type="email" class="form-control" placeholder="Nouvel e-Mail" value="<?php echo $userinfo-> mail; ?>">
             </div>
 
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text"><?php echo $userinfo-> mail; ?></span>
+                <span class="input-group-text">Confirmation e-Mail :</span>
               </div>
               <input name="newmail2" type="email" class="form-control" placeholder="Confirmation nouvel e-Mail">
             </div>
