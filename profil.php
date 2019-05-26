@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Japon</title>
-  <?php include 'head.php'; ?>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <?php include 'head.php'; ?>
 </head>
 <body>
   <?php
