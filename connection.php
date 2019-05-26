@@ -11,7 +11,7 @@ require('cookie.php');
 ?>
 
 <?php
-//$connexion = new PDO('mysql:host=mysql-celbilix.alwaysdata.net;dbname=celbilix_japongithub;charset=utf8', 'celbilix', 'Minecraft49100', array(
+//$connexion = new PDO('mysql:host=mysql-celbilix.alwaysdata.net;dbname=celbilix_japongithub;charset=utf8', 'celbilix', 'MDP', array(
 
 //    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 //    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
