@@ -68,7 +68,15 @@
                   <i class="fas fa-user-alt"></i>
                   <p><?php echo $key -> auteur; ?></p>
                   <i class="far fa-comment"></i>
-                  <p>7 Commentaires</p>
+                  <p>
+                  <?php 
+                      $requetecom = "SELECT * FROM commentaires WHERE id_article=".$key -> id;
+                      $requetecom2 = $connection -> query($requetecom);
+                      $mailexist = $requetecom2->rowCount();
+                      echo $mailexist;
+
+                  ?>
+                  Commentaires</p>
                   <i class="fas fa-tasks"></i>
                   <p>Jour <?php echo $key -> jour; ?></p>
                 </div>
