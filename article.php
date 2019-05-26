@@ -8,6 +8,15 @@
 
   </head>
   <body>
+
+ 
+<div class="modale-image" style="display: none;">
+  <figure>
+      <img src="' + varImage+'" alt="#">
+  </figure>
+</div>
+
+
     <?php
 
     // permet de savoir sur quel page on est
@@ -125,7 +134,7 @@
              <p class="date"><?php echo $key->datecom;?></p>
            </div>
            <div class="contenu-commentaire">
-          <?php echo $key->contenu;?>
+            <?php echo $key->contenu;?>
            </div>
          </div>
           
