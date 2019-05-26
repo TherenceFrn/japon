@@ -16,6 +16,13 @@
     include 'header.php';
     include 'connection.php';
 
+    if(isset($_GET['id'])){
+
+
+    }else{
+      header('Location: index.php');
+    }
+
     ?>
 
       <!-- main -->
