@@ -26,48 +26,43 @@
 
           <?php
 
-          $requete = $connection->query("SELECT * FROM articles WHERE id=?");
+          $getid = $_GET['id'];
 
-          $requeteR = $requete->execute(array($_POST['id']));
+          $requete = $connection->prepare('SELECT * FROM articles WHERE id=?');
+          $requete->execute(array($getid));
+          $articleInfo = $requete->fetch();
 
-          $requeteresultat = $requeteR -> fetchAll();
-
-          foreach ($requeteresultat as $key) {
+        
           	?>
 
             <div class="div-articles">
               <div class="articles-image">
-                <a href="article.php?id=<?php echo $key -> id;?>">
-                  <img class="" src="<?php echo 'images/article/'.$key -> image; ?>" alt="" />
+                <a href="article.php?id=<?php echo $articleInfo -> id;?>">
+                  <img class="" src="<?php echo 'images/article/'.$articleInfo -> image; ?>" alt="" />
                 </a>
               </div>
               <div class="articles-content">
-                <h3><?php echo $key -> titre; ?></h3>
+                <h3><?php echo $articleInfo -> titre; ?></h3>
                 <div class="articles-infos">
                   <i class="far fa-calendar-alt"></i>
-                  <p><?php echo $key -> datearticle; ?></p>
+                  <p><?php echo $articleInfo -> datearticle; ?></p>
                   <i class="fas fa-user-alt"></i>
-                  <p><?php echo $key -> auteur; ?></p>
+                  <p><?php echo $articleInfo -> auteur; ?></p>
                   <i class="far fa-comment"></i>
                   <p>7 Commentaires</p>
                   <i class="fas fa-tasks"></i>
-                  <p>Jour <?php echo $key -> jour; ?></p>
+                  <p>Jour <?php echo $articleInfo -> jour; ?></p>
                 </div>
                 <div class="articles-resume">
-                  <?php echo $key -> resume; ?>
+                  <?php echo $articleInfo -> resume; ?>
                 </div>
               </div>
-              <a href="article.php?id=<?php echo $key -> id;?>">
+              <a href="article.php?id=<?php echo $articleInfo -> id;?>">
                 <div class="articles-lire-plus">
                   Lire l'article
                 </div>
               </a>
             </div>
-
-
-            <?php
-            }
-          ?>
 
         </section>
       </main>
