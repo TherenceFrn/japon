@@ -82,6 +82,31 @@
 
          </section>
 
+        <section class="article-add-commentaire">
+
+         <?php 
+
+         if(isset($_SESSION['id'])){
+
+          ?>
+          <div class="container-article-comment">
+
+            <form action="addcomm.php?id=<?php echo $getid;?>" method="POST">
+              <textarea name="contenucomm"></textarea>
+              <input name="submitcomm" type="submit" value="Ajouter mon commentaire">
+            </form>
+            
+          </div>
+          <?php
+
+         }else{
+
+
+         }
+
+         ?>
+         </section>
+
         <section class="article-commentaire">
 
         <?php
@@ -111,30 +136,7 @@
 
         </section>
 
-         <section class="article-add-commentaire">
-
-         <?php 
-
-         if(isset($_SESSION['id'])){
-
-          ?>
-          <div class="container-article-comment">
-
-            <form action="addcomm.php?id=<?php echo $getid;?>" method="POST">
-              <textarea name="contenucomm"></textarea>
-              <input name="submitcomm" type="submit" value="Ajouter mon commentaire">
-            </form>
-            
-          </div>
-          <?php
-
-         }else{
-
-
-         }
-
-         ?>
-         </section>
+   
       </main>
 
       <!-- footer -->
