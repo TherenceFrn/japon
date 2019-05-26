@@ -40,9 +40,9 @@
                   <img class="" src="<?php echo 'images/article/'.$articleInfo -> image; ?>" alt="" />
                 </a>
               </div>
-
+              
               <div class="article-content">
-                <h3><?php echo $articleInfo -> titre; ?></h3>
+                <h2><?php echo $articleInfo -> titre; ?></h2>
                 <div class="article-infos">
                   <i class="far fa-calendar-alt"></i>
                   <p><?php echo $articleInfo -> datearticle; ?></p>
@@ -53,6 +53,10 @@
                   <i class="fas fa-tasks"></i>
                   <p>Jour <?php echo $articleInfo -> jour; ?></p>
                 </div>
+              </div>
+
+              <div class="article-contenu">
+              <?php echo $articleInfo -> contenu; ?>
               </div>
 
             </div>
