@@ -69,9 +69,31 @@
             </div>
 
 
+         </section>
+         <section class="article-commentaire">
+
+         <?php 
+
+         if(isset($_SESSION['id'])){
+
+          ?>
+          <div class="container-article-comment">
+
+            <form action="" method="POST">
+              <textarea></textarea>
+              <input type="submit" value="Ajouter mon commentaire">
+            </form>
+            
+          </div>
+          <?php
+
+         }else{
 
 
-        </section>
+         }
+
+         ?>
+         </section>
       </main>
 
       <!-- footer -->
