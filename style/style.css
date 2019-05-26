@@ -27,40 +27,38 @@ body{
 }
 
 
-
-
-
-
-
-
-
 /* CSS */
 
 h1{
-font-family: 'GidoleRegular';
+/* font-family: 'GidoleRegular'; */
+font-family: sans-serif;
 font-weight: 800;
 font-size: 150px;
 color: white;
 }
 
 h2{
-font-family: 'GidoleRegular';
+/* font-family: 'GidoleRegular'; */
+font-family: sans-serif;
 font-size: 50px;
 color: white;
 }
 
 h3{
-font-family: 'GidoleRegular';
+/* font-family: 'GidoleRegular'; */
+font-family: sans-serif;
 font-size: 35px;
 color: white;
 }
 
 h4{
-font-family: 'GidoleRegular';
+/* font-family: 'GidoleRegular'; */
+font-family: sans-serif;
 }
 
 p{
-font-family: 'GidoleRegular';
+/* font-family: 'GidoleRegular'; */
+font-family: sans-serif;
 /* color: white; */
 }
 
@@ -418,3 +416,26 @@ border-right: 1px solid white;
 transform: rotate(-45deg);
 cursor: pointer;
 }
+
+
+/* 
+Page Article
+*/
+
+.div-article{
+position: relative;
+
+}
+
+.div-article .article-image{
+position: absolute;
+top:0;
+left:50%;
+transform: translate(-50%,-50%);
+}
+
+.div-article .article-image img{
+  width: 500px;
+  border-radius: 15px;
+}
+

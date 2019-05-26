@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>Japon</title>
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/gidole-regular" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css" type="text/css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -35,15 +34,17 @@
         
           	?>
 
-            <div class="div-articles">
-              <div class="articles-image">
+            <div class="div-article">
+
+              <div class="article-image">
                 <a href="article.php?id=<?php echo $articleInfo -> id;?>">
                   <img class="" src="<?php echo 'images/article/'.$articleInfo -> image; ?>" alt="" />
                 </a>
               </div>
-              <div class="articles-content">
+
+              <div class="article-content">
                 <h3><?php echo $articleInfo -> titre; ?></h3>
-                <div class="articles-infos">
+                <div class="article-infos">
                   <i class="far fa-calendar-alt"></i>
                   <p><?php echo $articleInfo -> datearticle; ?></p>
                   <i class="fas fa-user-alt"></i>
@@ -53,16 +54,12 @@
                   <i class="fas fa-tasks"></i>
                   <p>Jour <?php echo $articleInfo -> jour; ?></p>
                 </div>
-                <div class="articles-resume">
-                  <?php echo $articleInfo -> resume; ?>
-                </div>
               </div>
-              <a href="article.php?id=<?php echo $articleInfo -> id;?>">
-                <div class="articles-lire-plus">
-                  Lire l'article
-                </div>
-              </a>
+
             </div>
+
+
+
 
         </section>
       </main>
