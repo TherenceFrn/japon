@@ -66,7 +66,17 @@
                   <i class="far fa-calendar-alt"></i>
                   <p><?php echo $key -> datearticle; ?></p>
                   <i class="fas fa-user-alt"></i>
-                  <p><?php echo $key -> auteur; ?></p>
+                  <p><?php
+                  
+                    $prereqIm = $connection->prepare("SELECT * FROM membres WHERE id=?");
+                    $prereqIm->execute(array($key-> id_auteur));
+                    $infosim = $prereqIm->fetchAll();
+
+                    foreach($infosim as $keyIm){
+                      echo $keyIm->pseudo;
+                    }
+                        
+                  ?></p>
                   <i class="far fa-comment"></i>
                   <p>
                   <?php 

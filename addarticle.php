@@ -29,9 +29,17 @@
 
         if($titre_l <= 255){
 
-        //$requeteMembres = $connection->prepare('INSERT INTO articles(titre, datearticle, auteur, jour, avatar, contenu, extrait) VALUES(?,?,?,?,?,?)');
-        //$requeteMembres->execute(array(
-        
+	      $datearticle = date("Y-m-d H:i:s");
+          
+        $requeteArticle = $connection->prepare('INSERT INTO articles(titre, datearticle, id_auteur, jour, avatar, contenu, extrait) VALUES(?,?,?,?,?,?,?)');
+        $requeteArticle->execute(array(
+          $titre,
+          $datearticle,
+          $_SESSION['id'],
+          $jour,
+          '1.jpg',
+          $contenu,
+          $resume
         ));
 
         }
