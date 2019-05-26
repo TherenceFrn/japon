@@ -3,12 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Japon</title>
-  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/gidole-regular" type="text/css"/>
-  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-  <!-- Latest compiled and minified CSS -->
+  <?php include 'head.php'; ?>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style/style.css" type="text/css"/>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
   <?php
