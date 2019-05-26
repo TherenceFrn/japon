@@ -18,6 +18,19 @@
 
     if(isset($_GET['id'])){
 
+      if(isset($_POST['submitcomm']) AND !empty($_POST['contenucomm'])){
+
+        $contenucomm = $_POST['contenucomm'];
+
+        $reqcom = $connection->prepare('INSERT INTO commentaires(auteur, contenu, id_article, datecom) VALUES(?,?,?,?)');
+
+				$datecom = date("Y-m-d H:i:s");
+				
+        $reqcom->execute(array($_SESSION['pseudo'], $contenucomm, $_GET['id'], $datecom));
+
+        $_POST['contenucomm'] = null;
+      }
+
 
     }else{
       header('Location: index.php');
@@ -36,6 +49,7 @@
           $requete = $connection->prepare('SELECT * FROM articles WHERE id=?');
           $requete->execute(array($getid));
           $articleInfo = $requete->fetch();
+
         
           	?>
 
@@ -55,7 +69,17 @@
                   <i class="fas fa-user-alt"></i>
                   <p><?php echo $articleInfo -> auteur; ?></p>
                   <i class="far fa-comment"></i>
-                  <p>7 Commentaires</p>
+                  <p>
+                    <?php
+                      
+                      $requetecom = "SELECT * FROM commentaires WHERE id_article=".$_GET['id'];
+                      $requetecom2 = $connection -> query($requetecom);
+                      $mailexist = $requetecom2->rowCount();
+                      echo $mailexist;
+                    
+                    ?>
+                  
+                  Commentaires</p>
                   <i class="fas fa-tasks"></i>
                   <p>Jour <?php echo $articleInfo -> jour; ?></p>
                 </div>
@@ -71,16 +95,6 @@
          </section>
 
         <section class="article-commentaire">
-
-        <div class="commentaire-article">
-           <div class="infos-commentaire">
-             <p class="auteur">Auteur</p>
-             <p class="date">20002-4887-66</p>
-           </div>
-           <div class="contenu-commentaire">
-            hsqdsqkldjlkqsjdlqsjdkqsdjqlskdjlqsl
-           </div>
-         </div>
 
         <?php
 
@@ -119,8 +133,8 @@
           <div class="container-article-comment">
 
             <form action="" method="POST">
-              <textarea></textarea>
-              <input type="submit" value="Ajouter mon commentaire">
+              <textarea name="contenucomm"></textarea>
+              <input name="submitcomm" type="submit" value="Ajouter mon commentaire">
             </form>
             
           </div>
