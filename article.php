@@ -18,7 +18,7 @@
 
     if(isset($_GET['id'])){
 
-      if(isset($_POST['submitcomm']) AND !empty($_POST['contenucomm'])){
+      if(isset($_POST['submitcomm']) AND $_POST['contenucomm']!=null){
 
         $contenucomm = $_POST['contenucomm'];
 
@@ -28,7 +28,7 @@
 				
         $reqcom->execute(array($_SESSION['pseudo'], $contenucomm, $_GET['id'], $datecom));
 
-        $_POST['contenucomm'] = null;
+        $_POST['submitcomm'] = null;
       }
 
 
