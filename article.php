@@ -70,7 +70,43 @@
 
 
          </section>
-         <section class="article-commentaire">
+
+        <section class="article-commentaire">
+
+        <div class="commentaire-article">
+           <div class="infos-commentaire">
+             <p class="auteur">Auteur</p>
+             <p class="date">20002-4887-66</p>
+           </div>
+           <div class="contenu-commentaire">
+            hsqdsqkldjlkqsjdlqsjdkqsdjqlskdjlqsl
+           </div>
+         </div>
+
+        <?php
+
+         $requete = $connection->query("SELECT * FROM articles ORDER BY id DESC");
+         $requeteresultat = $requete -> fetchAll();
+
+         foreach ($requeteresultat as $key) { ?>
+
+         <div class="commentaire-article">
+           <div class="infos-commentaire">
+             <p class="auteur">Auteur</p>
+             <p class="date">date</p>
+           </div>
+           <div class="contenu-commentaire">
+
+           </div>
+         </div>
+          
+          <?php }
+
+        ?>
+
+        </section>
+
+         <section class="article-add-commentaire">
 
          <?php 
 
