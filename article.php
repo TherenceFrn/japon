@@ -129,13 +129,37 @@
         foreach ($requeteresultat as $key) { ?>
 
          <div class="commentaire-article">
-           <div class="infos-commentaire">
-             <p class="auteur"><?php echo $key->auteur;?></p>
-             <p class="date"><?php echo $key->datecom;?></p>
+           <div class="imagePDP">
+             <img src="images/article/<?php 
+             
+             $prereqIm = $connection->prepare("SELECT * FROM membres WHERE id=?");
+             $prereqIm->execute(array($key->id_auteur));
+             $infosim = $prereqIm->fetchAll();
+
+             foreach($infosim as $keyIm){
+              echo $keyIm->avatar;
+             }
+             ?>" alt="">
            </div>
-           <div class="contenu-commentaire">
-            <?php echo $key->contenu;?>
-           </div>
+           <div class="content">
+             <div class="infos-commentaire">
+               <p class="auteur"><?php
+               
+              $prereqIm = $connection->prepare("SELECT * FROM membres WHERE id=?");
+              $prereqIm->execute(array($key->id_auteur));
+              $infosim = $prereqIm->fetchAll();
+
+              foreach($infosim as $keyIm){
+                echo $keyIm->pseudo;
+              }
+
+               ?></p>
+               <p class="date"><?php echo $key->datecom;?></p>
+              </div>
+              <div class="contenu-commentaire">
+                <?php echo $key->contenu;?>
+              </div>
+            </div>
          </div>
           
           <?php 

@@ -5,11 +5,11 @@
 
         $contenucomm = $_POST['contenucomm'];
 
-        $reqcom = $connection->prepare('INSERT INTO commentaires(auteur, contenu, id_article, datecom) VALUES(?,?,?,?)');
+        $reqcom = $connection->prepare('INSERT INTO commentaires(id_auteur, contenu, id_article, datecom) VALUES(?,?,?,?)');
 
 	    $datecom = date("Y-m-d H:i:s");
 				
-        $reqcom->execute(array($_SESSION['pseudo'], $contenucomm, $_GET['id'], $datecom));
+        $reqcom->execute(array($_SESSION['id'], $contenucomm, $_GET['id'], $datecom));
 
         $_POST['submitcomm'] = null;
         $_POST['contenucomm'] = null;
