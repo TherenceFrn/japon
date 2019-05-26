@@ -18,19 +18,7 @@
 
     if(isset($_GET['id'])){
 
-      if(isset($_POST['submitcomm']) AND $_POST['contenucomm']!=null){
-
-        $contenucomm = $_POST['contenucomm'];
-
-        $reqcom = $connection->prepare('INSERT INTO commentaires(auteur, contenu, id_article, datecom) VALUES(?,?,?,?)');
-
-				$datecom = date("Y-m-d H:i:s");
-				
-        $reqcom->execute(array($_SESSION['pseudo'], $contenucomm, $_GET['id'], $datecom));
-
-        $_POST['submitcomm'] = null;
-      }
-
+     
 
     }else{
       header('Location: index.php');
@@ -132,7 +120,7 @@
           ?>
           <div class="container-article-comment">
 
-            <form action="" method="POST">
+            <form action="addcomm.php?id=<?php echo $getid;?>" method="POST">
               <textarea name="contenucomm"></textarea>
               <input name="submitcomm" type="submit" value="Ajouter mon commentaire">
             </form>
