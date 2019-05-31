@@ -41,6 +41,11 @@ session_start();
               <h1>VOTRE<br>PROFIL</h1>
               <h2>Vous pouvez voir et changez vos informations ainsi que les commentaires que vous avez mis</h2>
             <?php
+            }else if($adresseURL == 'erreur'){
+              ?>
+              <h1>PAGE<br>ERREUR</h1>
+              <h2><?php echo $erreurPage; ?></h2>              
+              <?php
             }
            ?>
     </div>
