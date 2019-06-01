@@ -31,6 +31,8 @@
 
         if($titre_l <= 255){
 
+                    
+
           $requeteArticle = $connection->prepare('INSERT INTO articles(titre, datearticle, id_auteur, jour, avatar, contenu, extrait) VALUES(?,?,?,?,?,?,?)');
           $requeteArticle->execute(array(
             $titre,
@@ -41,6 +43,31 @@
             $contenu,
             $extrait
           ));
+
+          $lastid = $connection->lastInsertId();
+
+
+          if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])){
+            
+            if(exif_imagetype($_FILES['avatar']['tmp_name']) == 1 OR exif_imagetype($_FILES['avatar']['tmp_name']) == 2 OR exif_imagetype($_FILES['avatar']['tmp_name']) == 3 OR exif_imagetype($_FILES['avatar']['tmp_name']) == 18){
+              
+              $extentionUpload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));            
+              
+              $chemin = 'images/article/'.$lastid.'.'.$extentionUpload;
+
+              $avatarPath = $lastid.'.'.$extentionUpload;
+
+              move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin);
+
+              $requeteAvatar = $connection->prepare('UPDATE articles SET avatar = ? WHERE id=?');
+              $requeteAvatar->execute(array(
+                $avatarPath,
+                $lastid
+              ));
+              
+            }
+
+          }
 
         }
         
@@ -56,7 +83,7 @@
           <div class="container">
           <h2>Nouvel Article</h2>
 
-          <form class="" action="" method="post">
+          <form class="" action="" method="post" enctype='multipart/form-data' >
 
             <div class="input-group mb-3">
               <input name="titre" type="text" class="form-control" placeholder="Nom de l'article">
