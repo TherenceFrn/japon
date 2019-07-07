@@ -35,3 +35,29 @@ $(document).ready(function () {
     });
 })
     
+
+// EDITOR
+
+$('.editor-titre-h2').on('click', function(){
+
+   
+   var texte = $('.editor-contenu-article').val();
+   var texte = texte + '<h2>  </h2>';
+   $('.editor-contenu-article').val(texte);
+});
+
+$('.editor-titre-h3').on('click', function () {
+
+
+    var texte = $('.editor-contenu-article').val();
+    var texte = texte + '<h3>  </h3>';
+    $('.editor-contenu-article').val(texte);
+});
+
+$('.editor-paragraph').on('click', function () {
+
+
+    var texte = $('.editor-contenu-article').val();
+    var texte = texte + '<p>  </p>';
+    $('.editor-contenu-article').val(texte);
+});

@@ -113,24 +113,24 @@
 
             <div class="form-control liste-control-text">
               <div class="liste-control-text-element">
-                <span><i class="fas fa-heading"></i></span>
-                <span><i class="fas fa-heading"></i>2</span>
-                <span><i class="fas fa-align-left"></i></span>
+                <span class="editor-titre-h2"><i class="fas fa-heading"></i>2</span>
+                <span class="editor-titre-h3"><i class="fas fa-heading"></i>3</span>
+                <span class="editor-paragraph"><i class="fas fa-align-left"></i></span>
               </div>
 
               <div class="liste-control-text-element">
-                <span><i class="fas fa-bold"></i></span>
-                <span><i class="fas fa-underline"></i></span>
+                <span class="editor-bold"><i class="fas fa-bold"></i></span>
+                <span class="editor-underline"><i class="fas fa-underline"></i></span>
               </div>
 
               <div class="liste-control-text-element">
-                <span><i class="fas fa-image"></i></span>
-                <span><i class="fas fa-link"></i></span>
+                <span class="editor-image"><i class="fas fa-image"></i></span>
+                <span class="editor-link"><i class="fas fa-link"></i></span>
               </div>
             </div>
 
             <div class="input-group mb-3">
-              <textarea name="contenu" class="form-control" placeholder="Contenu de l'article" style="min-height:500px"></textarea>
+              <textarea name="contenu" class="form-control editor-contenu-article" placeholder="Contenu de l'article" style="min-height:500px"></textarea>
             </div>
 
             <button type="submit" name="validArticle" class="btn btn-primary float-right">S'inscrire</button>
