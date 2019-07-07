@@ -612,3 +612,16 @@ margin-right: 10px;
   justify-content: space-between;
   align-items: baseline;
 }
+
+/* addarticle */
+
+.liste-control-text{
+  display: flex;
+  align-items: center;
+
+}
+
+.liste-control-text .liste-control-text-element{
+  margin-right: 15px;
+  align-items: center;
+}

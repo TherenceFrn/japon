@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Japon</title>
-   <?php include 'head.php'; ?>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <?php include 'head.php'; ?>
   </head>
   <body>
     <?php
@@ -109,6 +109,24 @@
 
             <div class="input-group mb-3">
               <textarea name="resume" class="form-control" placeholder="Résumé de l'article" style="min-height:100px;max-height:200px"></textarea>
+            </div>
+
+            <div class="form-control liste-control-text">
+              <div class="liste-control-text-element">
+                <span><i class="fas fa-heading"></i></span>
+                <span><i class="fas fa-heading"></i>2</span>
+                <span><i class="fas fa-align-left"></i></span>
+              </div>
+
+              <div class="liste-control-text-element">
+                <span><i class="fas fa-bold"></i></span>
+                <span><i class="fas fa-underline"></i></span>
+              </div>
+
+              <div class="liste-control-text-element">
+                <span><i class="fas fa-image"></i></span>
+                <span><i class="fas fa-link"></i></span>
+              </div>
             </div>
 
             <div class="input-group mb-3">
