@@ -191,5 +191,9 @@
 
     <script type="text/javascript" src="script/jquery.js"></script>
     <script type="text/javascript" src="script/script.js"></script>
+    <script>
+    var textHTML = $('.article-contenu').text();
+    $('.article-contenu').html(textHTML);
+    </script>
   </body>
 </html>
