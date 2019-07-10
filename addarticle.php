@@ -15,6 +15,10 @@
     include 'header.php';
     include 'connection.php';
 
+    if(!isset($_SESSION['id'])){
+      header('Location:connexion.php');
+    }
+
     if(isset($_POST['validArticle']) AND isset($_SESSION['id'])){
 
       if(!empty($_POST['titre']) AND !empty($_POST['jour']) AND !empty($_POST['resume']) AND !empty($_POST['contenu'])){

@@ -1,1 +1,4 @@
 faire les alertes quand on s'inscrit avec bootstrap
+google map
+galerie imgur
+newsletter

@@ -3,8 +3,7 @@
     <div class="inner">
       <div class="block-logo-nav">
         <figure>
-          <!-- <img src="#" alt="Logo" title="Logo"> -->
-          <figcaption>Japon</figcaption>
+          <a href="index.php"><img class="logo-nav" src="images/header/japon.svg" alt="Logo" title="Logo"></a>
         </figure>
       </div>
       <div class="block-nav-menu">
@@ -12,7 +11,7 @@
           <li class="block-nav-li"><a href="index.php">HOME</a></li>
           <li class="block-nav-li"><a href="articles.php">ARTICLES</a></li>
           <li class="block-nav-li"><a href="#">GALERIE</a></li>
-          <li class="block-nav-li"><a href="#">MAP</a></li>
+          <li class="block-nav-li"><a href="map.php">MAP</a></li>
         </ul>
       </div>
       <div class="block-connexion-nav">

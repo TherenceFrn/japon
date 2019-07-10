@@ -61,3 +61,35 @@ $('.editor-paragraph').on('click', function () {
     var texte = texte + '<p>  </p>';
     $('.editor-contenu-article').val(texte);
 });
+
+$('.editor-bold').on('click', function () {
+
+
+    var texte = $('.editor-contenu-article').val();
+    var texte = texte + '<strong>  </strong>';
+    $('.editor-contenu-article').val(texte);
+});
+
+$('.editor-underline').on('click', function () {
+
+
+    var texte = $('.editor-contenu-article').val();
+    var texte = texte + '<u>  </u>';
+    $('.editor-contenu-article').val(texte);
+});
+
+$('.editor-image').on('click', function () {
+
+
+    var texte = $('.editor-contenu-article').val();
+    var texte = texte + '<img src="#" class="contenu-commentaire-image">';
+    $('.editor-contenu-article').val(texte);
+});
+
+$('.editor-link').on('click', function () {
+
+
+    var texte = $('.editor-contenu-article').val();
+    var texte = texte + '<a href="#"></a>';
+    $('.editor-contenu-article').val(texte);
+});

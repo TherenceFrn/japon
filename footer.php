@@ -29,6 +29,6 @@
       </div>
     </div>
   </div>
-  <div class="back-to-top">
+  <div class="back-to-top" title="Retourner en haut de la page">
   </div>
 </footer>

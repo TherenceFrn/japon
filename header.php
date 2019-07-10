@@ -46,8 +46,26 @@ session_start();
               <h1>PAGE<br>ERREUR</h1>
               <h2><?php echo $erreurPage; ?></h2>              
               <?php
+            }else if($adresseURL == 'article'){
+              $getid = $_GET['id'];
+              $requete = $connection->prepare('SELECT * FROM articles WHERE id=?');
+              $requete->execute(array($getid));
+              $articleInfo = $requete->fetch();
+
+              ?>
+              
+              <h1>ARTICLE <br> JOUR : <?php echo $articleInfo -> jour; ?></h1>
+              <h2><?php echo $articleInfo -> titre; ?></h2>
+            <?php
+            }else if($adresseURL == 'map'){
+              ?>
+              <h1>GOOGLE MAP<br>LA CARTE</h1>
+              <h2>La carte de notre voyage</h2>              
+              <?php
             }
            ?>
+
+          <img class="logo-nav-title" src="images/header/japon.svg" alt="Logo" title="Logo">        
     </div>
     <div class="scroller">
     </div>

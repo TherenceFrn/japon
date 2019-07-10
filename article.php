@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <title>Japon</title>
    
-    <?php include 'head.php'; ?>
+    <?php 
+    include 'connection.php';    
+    include 'head.php'; ?>
 
   </head>
   <body>
@@ -23,7 +25,6 @@
     $adresseURL = 'article';
 
     include 'header.php';
-    include 'connection.php';
 
     if(isset($_GET['id'])){
 
