@@ -33,14 +33,17 @@ h1{
 /* font-family: 'GidoleRegular'; */
 font-family: sans-serif;
 font-weight: 800;
-font-size: 150px;
+font-size: 8em;
+/* font-size: 150px; */
 color: white;
+line-height: 1em;
 }
 
 h2{
 /* font-family: 'GidoleRegular'; */
 font-family: sans-serif;
-font-size: 50px;
+/* font-size: 50px; */
+font-size: 4em;
 color: white;
 }
 
@@ -150,8 +153,9 @@ opacity: 1;
 }
 
 .block-header .block-content-header .block-title-header{
-margin: 250px 150px;
+margin: 8% 10%;
 position: relative;
+min-width: 95%;
 }
 
 .block-header .block-content-header .scroller{
@@ -650,3 +654,48 @@ margin-right: 10px;
   justify-content: center;
   padding: 5%;  
 }
+
+
+.section-galerie{
+  padding : 50px 5%;
+}
+
+.section-galerie .row>div {
+  height: 60vh;
+  align-items: center;
+  display: flex;
+  padding: 2%;
+}
+
+.section-galerie img,
+.section-caroussel img {
+  width: 100%;
+}
+
+.section-caroussel {
+   padding : 100px 5% 50px 5%;
+}
+
+.section-caroussel .controle-galerie{
+    position: relative;
+}
+
+.section-caroussel .controle-galerie>p{
+  position: absolute;
+  color: white;
+  font-size: 5em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.section-caroussel .controle-galerie>p:hover{
+  position: absolute;
+  color: rgba(255, 0, 0, 0.5);
+  font-size: 5em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+

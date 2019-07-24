@@ -1,4 +1,6 @@
 faire les alertes quand on s'inscrit avec bootstrap
-google map
+/google map/
 galerie imgur
 newsletter
+faire defiler les images dans les articles
+faire des avatar
