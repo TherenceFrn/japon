@@ -64,7 +64,7 @@ session_start();
               <?php
             }
            ?>
-
+          <!-- a changer -->
           <img class="logo-nav-title" src="images/header/japon.svg" alt="Logo" title="Logo">        
     </div>
     <div class="scroller">

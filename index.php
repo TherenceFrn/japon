@@ -48,10 +48,9 @@
           </div>
           <div class="block-articles-home">
 
+        <?php
 
-          <?php
-
-          $requete = $connection->query("SELECT * FROM articles ORDER BY id DESC LIMIT 4");
+          $requete = $connection->query("SELECT * FROM articles ORDER BY id DESC LIMIT 3");
 
           $requeteresultat = $requete -> fetchAll();
 
