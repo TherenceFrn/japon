@@ -21,24 +21,30 @@
         <section class="section-1 section-discover">
           <div class="div-discover div-discover-1">
               <i class="fas fa-map-marker-alt"></i>
+              <a href="map.php">
               <div class="block-discover-content block-discover-content-1">
                 <p>Nous partageons avec vous les lieux que nous allons visiter sur une carte Google Map</p>
                 <h3>Voir la carte</h3>
               </div>
+              </a>
           </div>
           <div class="div-discover div-discover-2">
               <i class="far fa-images"></i>
+              <a href="galerie.php">
               <div class="block-discover-content block-discover-content-2">
                 <p>Nous partageons avec vous les lieux que nous allons visiter sur une carte Google Map</p>
                 <h3>Voir la galerie</h3>
               </div>
+              </a>
           </div>
           <div class="div-discover div-discover-3">
               <i class="far fa-file-alt"></i>
+              <a href="articles.php">
               <div class="block-discover-content block-discover-content-3">
                 <p>Nous partageons avec vous les lieux que nous allons visiter sur une carte Google Map</p>
                 <h3>Voir les articles</h3>
               </div>
+            </a>
           </div>
         </section>
         <section class="section-2 section-home-articles">

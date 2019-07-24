@@ -3,9 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Japon</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
    
     <?php 
-    include 'connection.php';    
+    include 'connection.php';
+    
     include 'head.php'; ?>
 
   </head>
@@ -61,7 +63,14 @@
               
               <div class="article-content">
                 <h2><?php echo $articleInfo -> titre; ?></h2>
-                <div class="article-infos">
+               
+              </div>
+
+              <div class=" article-contenu container">
+              <?php echo $articleInfo -> contenu; ?>
+              </div>
+
+               <div class="article-infos container">
                   <i class="far fa-calendar-alt"></i>
                   <p><?php echo $articleInfo -> datearticle; ?></p>
                   <i class="fas fa-user-alt"></i>
@@ -91,18 +100,12 @@
                   <i class="fas fa-tasks"></i>
                   <p>Jour <?php echo $articleInfo -> jour; ?></p>
                 </div>
-              </div>
-
-              <div class="article-contenu">
-              <?php echo $articleInfo -> contenu; ?>
-              </div>
-
             </div>
 
 
          </section>
 
-        <section class="article-add-commentaire">
+        <section class="article-add-commentaire container">
 
          <?php 
 
@@ -127,7 +130,7 @@
          ?>
          </section>
 
-        <section class="article-commentaire">
+        <section class="article-commentaire container">
 
         <?php
 

@@ -458,6 +458,7 @@ transform: translate(-50%,-50%);
 .div-article .article-content h2 {
  position:absolute;
  left: 50%;
+ top: 0;
  transform: translate(-50%,-50%);
 }
 
@@ -465,21 +466,29 @@ transform: translate(-50%,-50%);
   color: white;
 }
 
-.div-article .article-content .article-infos{
+.div-article .article-infos{
   text-align: right;
   display: flex;
   justify-content: right;
+  color: white;
 
 }
 
-.div-article .article-content .article-infos i{
+.div-article .article-infos i{
   padding-left: 15px;
   padding-right: 8px;
   color: rgba(255, 0, 0, 0.5);
 }
 
+.div-article .article-infos i:first-child{
+  padding-left: 0px;
+  padding-right: 8px;
+  color: rgba(255, 0, 0, 0.5);
+}
+
+
 .div-article .article-contenu{
-  padding: 150px;
+  /* padding: 150px; */
   color: white;
 }
 
@@ -497,7 +506,11 @@ transform: translate(-50%,-50%);
 .article-add-commentaire .container-article-comment,
 .article-commentaire{
 
-  padding: 50px 200px;
+  padding: 50px 0;
+}
+
+.article-add-commentaire.container{
+  padding-left: 0px;
 }
 
 .article-add-commentaire .container-article-comment textarea{
@@ -704,9 +717,13 @@ margin-right: 10px;
   cursor: pointer;
 }
 
+.div-article .article-content{
+  padding-top: 180px;
+}
+
 /* Landscape phone to portrait tablet */
 
-@media screen and (min-width: 700px) {
+@media screen and (max-width: 700px) {
   .block-header {
     /* height: 100vh !important; */
   }
