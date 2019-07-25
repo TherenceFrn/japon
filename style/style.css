@@ -125,7 +125,7 @@ margin-right: 86px;
 
 .block-header{
 position: relative;
-height: 40vh;
+height: 100vh;
 /* height: 630.78px; */
 overflow: hidden;
 }
@@ -719,13 +719,6 @@ margin-right: 10px;
 
 .div-article .article-content{
   padding-top: 180px;
-}
-
-/* Landscape phone to portrait tablet */
-@media screen and (max-width: 700px) {
-  .block-header {
-    height: 100vh !important;
-  }
 }
 
 

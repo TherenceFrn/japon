@@ -3,7 +3,7 @@
     <div class="inner">
       <div class="block-logo-nav">
         <figure>
-          <a href="index.php"><img class="logo-nav" src="images/header/japon.svg" alt="Logo" title="Logo"></a>
+          <a href="index.php"><img class="logo-nav" src="images/header/logo-japon-sans-texte.svg" alt="Logo" title="Logo"></a>
         </figure>
       </div>
       <div class="block-nav-menu">

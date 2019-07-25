@@ -65,7 +65,7 @@ session_start();
             }
            ?>
           <!-- a changer -->
-          <img class="logo-nav-title" src="images/header/japon.svg" alt="Logo" title="Logo">        
+          <img class="logo-nav-title" src="images/header/logo-japon-sans-texte.svg" alt="Logo" title="Logo">        
     </div>
     <div class="scroller">
     </div>
