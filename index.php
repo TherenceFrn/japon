@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Japon</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
     <?php include 'head.php'; ?>
   </head>
   <body>
@@ -18,6 +20,7 @@
 
       <!-- main -->
         <main class="block-content-body">
+          
         <section class="section-1 section-discover">
           <div class="div-discover div-discover-1">
               <i class="fas fa-map-marker-alt"></i>
@@ -47,6 +50,18 @@
             </a>
           </div>
         </section>
+        <div class="citation-index container">
+            <blockquote>
+              <footer>何故 - Naze</footer>
+              <p>Naze, en Japonais, veut dire « Pourquoi ».<br>
+              C’est donc le premier mot qui pourrait venir à l’esprit quant aux raisons de notre voyage au Japon. Tout simplement un samedi soir en Famille, autour d’une bonne table et une discussion autour des 18 ans de Therence. 
+              <br>Une suggestion : partir 2 semaines au Japon en duo
+              <br>
+              Le résultat : un voyage de 18 jours que vous allez pouvoir suivre sur ce blog.
+              N’hésitez pas à nous laisser vos commentaires sur ce site.
+              <br>Nous ferons de notre mieux pour le tenir à jour Sayonara.</p>
+            </blockquote>
+          </div>
         <section class="section-2 section-home-articles">
           <div class="section-home-articles-title">
             <h4>Articles sur le Japon</h4>
