@@ -23,6 +23,11 @@
     include 'header.php';
     include 'connection.php';
 
+    if($_SESSION['email'] != 'test@test.test'){
+
+      header('Location: index.php');
+    }
+
     ?>
 
       <!-- main -->
@@ -33,23 +38,14 @@
           <?php $requete = $connection->query("SELECT * FROM galerie ORDER BY id");
 
           $requeteresultat = $requete -> fetchAll();
-
-          $nombreImage = 1;
-
-          echo '<div class="row">';
-
-          foreach ($requeteresultat as $key) {
-
-          if($nombreImage == 4){
-            echo '</div><div class="row">';
-            $nombreImage = 0;
-          }
-
-          echo '<div class="col-sm-4"><img class="contenu-commentaire-image" src="'.$key -> url_image.'"></div>';
-
-          $nombreImage++;
-          }
           ?>
+
+          <form action="addgalerie_gestion.php" method="POST">
+
+          <input name="url_image" type="text" placeholder="URL Image">
+          <input name="quote_image" type="text" placeholder="Quote Image">
+          <input name="add_image_galerie" type="submit">
+          </form>
                 
         </section>
       </main>

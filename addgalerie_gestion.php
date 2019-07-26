@@ -23,39 +23,29 @@
     include 'header.php';
     include 'connection.php';
 
-    ?>
+    if($_SESSION['email'] != 'test@test.test'){
 
-      <!-- main -->
-        <main class="block-content-body">
-        <section class="section-2 section-galerie">
+      header('Location: index.php');
+    }
 
 
-          <?php $requete = $connection->query("SELECT * FROM galerie ORDER BY id");
+    if(isset($_POST['add_image_galerie'])){
 
-          $requeteresultat = $requete -> fetchAll();
+        if(!empty($_POST['quote_image']) AND !empty($_POST['url_image'])){
 
-          $nombreImage = 1;
+          $requetImage = $connection->prepare('INSERT INTO galerie(url_image,quote) VALUES(?,?)');
+          $requetImage->execute(array(
+            $_POST['url_image'],
+            $_POST['quote_image']
+          ));
 
-          echo '<div class="row">';
+          header('Location: addgalerie.php');
 
-          foreach ($requeteresultat as $key) {
+      }
+    }else{
+      header('Location: index.php');
+    }
 
-          if($nombreImage == 4){
-            echo '</div><div class="row">';
-            $nombreImage = 0;
-          }
-
-          echo '<div class="col-sm-4"><img class="contenu-commentaire-image" src="'.$key -> url_image.'"></div>';
-
-          $nombreImage++;
-          }
-          ?>
-                
-        </section>
-      </main>
-
-   <!--footer -->
-      <?php
 
       include 'footer.php'
 

@@ -50,6 +50,7 @@
                 ?>
                 <a href="editionprofil.php"><button type="button" class="btn btn-primary">Editer mon profil</button></a>
                 <a href="listearticle.php"><button type="button" class="btn btn-success">Créer un article</button></a>
+                <a href="addgalerie.php"><button type="button" class="btn btn-warning">Ajouter une photo a la galerie</button></a>
                 <a href="deconnexion.php"><button type="button" class="btn btn-danger float-right">Se déconnecter</button></a>
                 <?php
                 } ?>
