@@ -95,12 +95,5 @@ $('.editor-link').on('click', function () {
 });
 
 
-window.onload=function(){
-var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
-    if (mobile) {
-        alert("Ce site est optimisé pour une navigation sur ordinateur");  
-    } else {
-        
-    }
-}
+
 //document.cookie = 'cookie_mobile=valeur_cookie; expires=Thu, 2 Aug 2012 20:47:11 UTC; path=/'

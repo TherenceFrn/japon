@@ -46,6 +46,11 @@ session_start();
               <h1>PAGE<br>ERREUR</h1>
               <h2><?php echo $erreurPage; ?></h2>              
               <?php
+            }else if($adresseURL == 'galerie'){
+              ?>
+              <h1>PAGE<br>GALERIE</h1>
+              <h2>Galerie des photos de notre voyage</h2>              
+              <?php
             }else if($adresseURL == 'article'){
               $getid = $_GET['id'];
               $requete = $connection->prepare('SELECT * FROM articles WHERE id=?');
