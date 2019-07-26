@@ -24,7 +24,7 @@ $(document).ready(function () {
     $('.contenu-commentaire-image').on('click', function(){
         
         var varImage = $(this).attr('src');
-        console.log(varImage);
+        // console.log(varImage);
         
         $('.modale-image img').attr('src', varImage);
         $('.modale-image').fadeIn();
