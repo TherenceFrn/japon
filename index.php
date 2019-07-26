@@ -123,5 +123,15 @@
 
     <script type="text/javascript" src="script/jquery.js"></script>
     <script type="text/javascript" src="script/script.js"></script>
+    <script type="text/javascript">   
+    window.onload=function(){
+      var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+      if (mobile) {
+        alert("Ce site est optimisé pour une navigation sur ordinateur");  
+      } else {
+        
+      }
+    }
+    </script>
   </body>
 </html>
