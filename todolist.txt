@@ -1,6 +1,2 @@
-faire les alertes quand on s'inscrit avec bootstrap
-/google map/
-galerie imgur
-newsletter
-faire defiler les images dans les articles
-faire des avatar
+article : pouvoir lier un album imgur
+mettre un paragraphe a la fin de chaque article qui explique la difference entre galerie et imgur
