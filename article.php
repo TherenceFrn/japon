@@ -92,9 +92,16 @@
                       $requetecom = "SELECT * FROM commentaires WHERE id_article=".$_GET['id'];
                       $requetecom2 = $connection -> query($requetecom);
                       $mailexist = $requetecom2->rowCount();
-                      echo $mailexist;
+                      // echo $mailexist;
                     
-                    ?>
+                      $requetecom = "SELECT * FROM commentaires_anon WHERE id_article=".$_GET['id'];
+                      $requetecom2 = $connection -> query($requetecom);
+                      $mailexist2 = $requetecom2->rowCount();
+                      // echo $mailexist;
+
+                      $mailexist3 = $mailexist + $mailexist2;
+                      echo $mailexist3;
+                    ?>  
                   
                   Commentaires</p>
                   <i class="fas fa-tasks"></i>
@@ -124,7 +131,19 @@
 
          }else{
 
+          ?>
 
+          <div class="container-article-comment">
+
+            <form action="addcomm.php?id=<?php echo $getid;?>" method="POST">
+              <input name="comm-utilisateur-anon" type="text" placeholder="Votre Nom"> 
+              <textarea name="contenucomm-anon"></textarea>
+              <input name="submitcomm-anon" type="submit" value="Ajouter mon commentaire">
+            </form>
+            
+          </div>
+
+          <?php
          }
 
          ?>
@@ -133,8 +152,6 @@
         <section class="article-commentaire container">
 
         <?php
-
-
         $prereq = "SELECT * FROM commentaires WHERE id_article='".$_GET['id']."' ORDER BY id DESC";
         $requete = $connection -> query($prereq);
         $requeteresultat = $requete -> fetchAll();
@@ -169,6 +186,35 @@
 
                ?></p>
                <p class="date"><?php echo $key->datecom;?></p>
+              </div>
+              <div class="contenu-commentaire">
+                <?php echo $key->contenu;?>
+              </div>
+            </div>
+         </div>
+          
+          <?php 
+        }
+
+        ?>
+
+        <!-- commentaires anonymes -->
+        <?php
+        $prereq = "SELECT * FROM commentaires_anon WHERE id_article='".$_GET['id']."' ORDER BY id DESC";
+        $requete = $connection -> query($prereq);
+        $requeteresultat = $requete -> fetchAll();
+
+
+        foreach ($requeteresultat as $key) { ?>
+
+         <div class="commentaire-article">
+           <div class="imagePDP">
+             <img src="images/avatar/avatar.gif" alt="avatar">
+           </div>
+           <div class="content">
+             <div class="infos-commentaire">
+               <p class="auteur"><?php echo $key->auteur; ?></p>
+               <p class="date"><?php echo $key->date_com; ?></p>
               </div>
               <div class="contenu-commentaire">
                 <?php echo $key->contenu;?>

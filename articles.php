@@ -83,7 +83,16 @@
                       $requetecom = "SELECT * FROM commentaires WHERE id_article=".$key -> id;
                       $requetecom2 = $connection -> query($requetecom);
                       $mailexist = $requetecom2->rowCount();
-                      echo $mailexist;
+                      // echo $mailexist;
+
+                      
+                      $requetecom = "SELECT * FROM commentaires_anon WHERE id_article=".$key -> id;
+                      $requetecom2 = $connection -> query($requetecom);
+                      $mailexist2 = $requetecom2->rowCount();
+                      // echo $mailexist;
+
+                      $mailexist3 = $mailexist + $mailexist2;
+                      echo $mailexist3;
 
                   ?>
                   Commentaires</p>
