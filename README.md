@@ -6,6 +6,5 @@ This is a simple blog, where you can see articles, a gallery of pics we took, th
 ## Links
 
 ##### [My Twitter](https://twitter.com/therenceferron)  
-##### [My other Twitter account](https://twitter.com/littletherence) ( where I shitpost )
 ##### My mail : therence.ferron@gmail.com
-##### [Website](https://celbilix.alwaysdata.net)
+##### [Website](https://therenceferron.fr/)
